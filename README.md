@@ -14,12 +14,6 @@ multiple-choice quiz with one tap. It works offline, signs in with Google, sends
 | **How to run it** | [docs/RUN_GUIDE.md](docs/RUN_GUIDE.md) (start here) |
 | **Play Store** | `TODO: screenshot / link of your Play Console upload` |
 
-## Screenshots
-`TODO: add your own phone screenshots to docs/screenshots/ and link them here`
-
-| Login | Dashboard | Streak board | Badges | Notes | Quiz | Settings | isiZulu |
-|---|---|---|---|---|---|---|---|
-| ![](docs/screenshots/login.png) | ![](docs/screenshots/home.png) | ![](docs/screenshots/board.png) | ![](docs/screenshots/badges.png) | ![](docs/screenshots/notes.png) | ![](docs/screenshots/quiz.png) | ![](docs/screenshots/settings.png) | ![](docs/screenshots/zulu.png) |
 
 ## Features
 
@@ -89,19 +83,7 @@ All routes except `/health`, register and login need `Authorization: Bearer <tok
 | **POST** | **`/api/devices`, `/api/devices/unregister`, `/api/devices/test`** | **register this phone for push / unregister / send a test push** |
 | **POST** | **`/api/internal/run-reminders`** | **cron trigger (needs `x-cron-secret`)** |
 
-## Setup
-Follow **[docs/PART3_SETUP.md](docs/PART3_SETUP.md)** (Google sign-in, Firebase push, cron trigger, testing each feature) after the basics:
 
-1. **Atlas + Render:** create a free Atlas cluster, allow `0.0.0.0/0`, deploy `backend/` to Render with `MONGODB_URI`, `JWT_SECRET` (+ the Part 3 variables listed in `backend/.env.example`).
-2. **Android:** open `android/` in a current Android Studio; set `API_BASE_URL` and `GOOGLE_WEB_CLIENT_ID` in `android/gradle.properties`; add `android/app/google-services.json` for push; run on a phone.
-3. **Logs:** Logcat tags `SyncEngine`, `SyncCoordinator`, `PushManager`, `PushService`, `GoogleSignIn`, `ApiClient`, `Repository`.
-
-## Testing
-```bash
-cd backend && npm test                                   # Node 18+, no database needed
-cd android && ./gradlew testDebugUnitTest                # Windows: gradlew.bat testDebugUnitTest
-# HTML report: android/app/build/reports/tests/testDebugUnitTest/index.html
-```
 | Area | What is tested |
 |---|---|
 | Validation, domain logic, API error parsing | rules, dashboard maths, next reminder, tag parsing, note search |
@@ -112,14 +94,3 @@ cd android && ./gradlew testDebugUnitTest                # Windows: gradlew.bat 
 | ViewModels | login/register/Google sign-in, dashboard actions |
 | Backend reminders | time zones, which reminders/streak alerts are due, de-duplication |
 
-## GitHub and GitHub Actions
-`.github/workflows/ci.yml` runs on every push / pull request to `main`: backend tests; Android unit tests + debug build; and an **unsigned R8 release build** (proves the shrinker rules and translations are valid). Check the **Actions** tab for green ticks. Commit small and often, then tag the final one: `git tag -a v1.0.0-final-poe -m "Final PoE" && git push origin v1.0.0-final-poe`.
-
-## Releasing to Google Play
-See [store/RELEASE_CHECKLIST.md](store/RELEASE_CHECKLIST.md) (signing key, `assembleRelease` / `bundleRelease`, Play Console steps) and the listing assets in `store/`.
-
-## AI tool usage
-`TODO: write your own honest AI-use statement (max 500 words). A draft to edit is in docs/AI_USE_STATEMENT_DRAFT.md`
-
-## References
-`TODO: paste your final reference list (starting point in docs/REFERENCES.md) and cite in-text.`
