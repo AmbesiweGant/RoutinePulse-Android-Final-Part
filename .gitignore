@@ -1,0 +1,25 @@
+# Secrets - never commit these
+.env
+*.keystore
+*.jks
+google-services.json
+local.properties
+keystore.properties
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Android / Gradle
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
