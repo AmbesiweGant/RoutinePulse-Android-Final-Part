@@ -3,7 +3,7 @@
 > A habit tracker and study companion for students - **OPSC6312 Open Source Coding (Intermediate), final PoE.**
 
 RoutinePulse treats studying as a trackable habit: tick off daily habits, keep your lecture notes in one place and turn any note into a
-multiple-choice quiz with one tap. It works offline, signs in with Google, sends reminders and speaks English, isiZulu and Afrikaans.
+multiple-choice quiz with one tap. It works offline, signs in with Google, sends reminders and speaks English, isiXhosa, isiZulu and Afrikaans.
 
 | | |
 |---|---|
