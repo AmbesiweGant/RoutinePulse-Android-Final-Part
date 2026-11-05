@@ -8,7 +8,7 @@ multiple-choice quiz with one tap. It works offline, signs in with Google, sends
 | | |
 |---|---|
 | **Demo video** | `TODO: paste your unlisted YouTube link here` |
-| **Live API** | `TODO: https://<your-service>.onrender.com/health` |
+| **Live API** | `API_BASE_URL=https://exciting-hourly-movies-zinc.trycloudflare.com/` |
 | **CI status** | `TODO: ![CI](https://github.com/<you>/<repo>/actions/workflows/ci.yml/badge.svg)` |
 | **Release notes** | [RELEASE_NOTES.md](RELEASE_NOTES.md) |
 | **How to run it** | [docs/RUN_GUIDE.md](docs/RUN_GUIDE.md) (start here) |
